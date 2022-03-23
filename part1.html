@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Part 1</title>
+
+    <style>h1 {
+        text-align: center;
+      }
+      
+      img {
+        display: block;
+      }
+      
+      .slides {
+        width:400px;
+        margin:auto;
+      }
+      
+      .slides figure {
+        margin:0;
+      }
+      
+      .slides .prev {
+        float:left;
+      }
+      
+      .slides .nxt {
+        float:right;
+      }
+      
+      
+      </style>
+
+<body>
+    <a href="index.html">Back to Landing Page</a>
+
+    <h1>Part 1: Start Photo Gallery</h1>
+
+    <h1>Slides!</h1>
+    <div class="slides">
+    <figure>
+        <img class="pic" src="https://assets.codepen.io/2538893/car1.jpg" alt="">
+    </figure>
+
+    <a class="prev" href="">previous</a>
+    <a class="nxt" href="">next</a>
+    
+    </div>
+
+
+
+
+    <script>
+
+        const baseURL = 'https://assets.codepen.io/2538893/';
+        const nxt = document.querySelector('.nxt');
+        const prev = document.querySelector('.prev');
+        const slide = document.querySelector('.pic');
+        const cars = ['car1.jpg', 'car2.jpg', 'car3.jpg', 'car4.jpg'];
+        let index = 0;
+
+        nxt.onclick = function(e) {
+        e.preventDefault();
+        index = index + 1;
+         //write a conditional so that the images wrap back to the beginning image.
+         if(index >= cars.length) {
+            index = 0;
+        }
+        slide.src = baseURL + cars[index];
+        console.log(index);
+
+       
+
+        console.log(index);
+
+        }
+
+        //Add a previous button event listener
+
+
+        prev.addEventListener('click', (e) => {
+        e.preventDefault();
+        index = index - 1;
+        //write a conditional so that the images wrap back to the beginning image.
+        if(index < 0) {
+            index = 3;
+        }
+        slide.src = baseURL + cars[index];
+        console.log(index);
+
+        
+        console.log(index);
+
+        });
+
+
+    </script>
+</body>
+
+    
