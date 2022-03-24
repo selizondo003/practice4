@@ -37,6 +37,9 @@
             /* write rotate class here */
             .boxSpin{
             transform: rotate(360deg);
+            color: aliceblue;
+            background-color: blueviolet;
+
             }
 
 
@@ -48,7 +51,7 @@
 
     <a href="index.html">Back to Landing Page</a>
 
-    <h1>Part 1: Start Photo Gallery</h1>
+    <h1>Part 2: Make Boxes</h1>
 
     <h2>Complete the challenge below</h2>
 
@@ -89,7 +92,8 @@
 
         /* write event listener here */
         box.addEventListener('click', (e)=> {
-        e.target.classList.add('boxSpin');
+        e.target.classList.toggle('boxSpin');
+       
         console.log('clicked');
         })
         box.appendChild(txt);
